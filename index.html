@@ -58,8 +58,8 @@
     <script src="http://seb.ly/demos/JSSnowNew/js/Snow.js"></script>
     <script>
 
-        var SCREEN_WIDTH = window.innerWidth;
-        var SCREEN_HEIGHT = window.innerHeight;
+        var SCREEN_WIDTH = document.body.scrollWidth;
+        var SCREEN_HEIGHT = document.body.scrollHeight;
 
         var container;
 
@@ -72,8 +72,8 @@
         var mouseX = 0;
         var mouseY = 0;
 
-        var windowHalfX = window.innerWidth / 2;
-        var windowHalfY = window.innerHeight / 2;
+        var windowHalfX = SCREEN_WIDTH / 2;
+        var windowHalfY = SCREEN_HEIGHT / 2;
 
         var particles = [];
         var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
@@ -82,8 +82,12 @@
 
 
         function init() {
-
+            var n = new Date();
+            if (n.getDate() != 25 || n.getMonth() != 11) {
+                return;
+            }
             container = document.createElement('div');
+            container.className = 'snow';
             document.body.appendChild(container);
 
             camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
@@ -116,6 +120,8 @@
             document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
             setInterval( loop, 1000 / 60 );
+
+            document.body.className = 'snow-on';
 
         }
 
@@ -175,7 +181,7 @@
 
 
         }
-
+        document.title = '圣诞快乐！';
     </script>
   </body>
 </html>
