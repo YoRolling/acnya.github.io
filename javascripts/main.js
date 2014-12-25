@@ -4,13 +4,12 @@
 
   bgmSrc = 'http://static.sdg-china.com/mxd/media/MXDmusic/Bgm04.img.WhiteChristmas.mp3';
 
-  audio = $('<audio>');
+  audio = document.createElement('audio');
 
-  audio.attr({
-    src: bgmSrc,
-    loop: 'loop'
-  });
+  audio.src = bgmSrc;
 
-  audio[0].play();
+  audio.loop = true;
+
+  audio.play();
 
 }).call(this);

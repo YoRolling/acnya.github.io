@@ -53,15 +53,14 @@
         </aside>
       </div>
     </div>
-    <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
     <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://seb.ly/demos/JSSnowNew/js/ThreeCanvas.js"></script>
     <![endif]-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.min.js"></script>
-    <script src="javascripts/snow.js"></script>
+    <script src="http://seb.ly/demos/JSSnowNew/js/ThreeCanvas.js"></script>
     <script>
-        //http://seb.ly/demos/JSSnowNew/snow3d.html
+
         var SCREEN_WIDTH = window.innerWidth;
         var SCREEN_HEIGHT = window.innerHeight;
 
@@ -81,7 +80,7 @@
 
         var particles = [];
         var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
-        particleImage.src = 'images/ParticleSmoke.png';
+        particleImage.src = 'img/ParticleSmoke.png';
 
 
 
@@ -96,7 +95,7 @@
             scene = new THREE.Scene();
             scene.add(camera);
 
-            renderer = new THREE.WebGLRenderer();
+            renderer = new THREE.CanvasRenderer();
             renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
             var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
 
