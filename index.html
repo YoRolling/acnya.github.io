@@ -95,7 +95,7 @@
             scene = new THREE.Scene();
             scene.add(camera);
 
-            renderer = new THREE.CanvasRenderer();
+            renderer = new THREE.WebGLRenderer();
             renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
             var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
 
