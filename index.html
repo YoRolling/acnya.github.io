@@ -110,7 +110,7 @@
 
         function init() {
             var n = new Date();
-            if ((n.getDate() >= 25 && n.getDate() <= 27) || n.getMonth() != 11) {
+            if ((n.getDate() <= 25 && n.getDate() >= 27) || n.getMonth() != 11) {
                 return;
             }
             container = document.createElement('div');
